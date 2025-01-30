@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Compass
   - EnemyCow
+  - Obstacle
   layers:
   - Default
   - TransparentFX

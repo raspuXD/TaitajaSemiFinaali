@@ -7,6 +7,12 @@ public class Bullet : MonoBehaviour
     public int Damage;
     public bool isenemyBullet;
 
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
+
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (isenemyBullet)
@@ -36,5 +42,11 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        if(collider.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
+            
     }
 }

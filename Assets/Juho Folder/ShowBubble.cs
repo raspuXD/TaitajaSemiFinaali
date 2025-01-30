@@ -42,6 +42,7 @@ public class ShowBubble : MonoBehaviour
                 {
                     if(inve.Money >= 100)
                     {
+                        inve.DecreaseMoney(100);
                         Teleport();
                     }
                 }
