@@ -8,34 +8,57 @@ public class EnemyShoot : MonoBehaviour
     public GameObject BulletPrefab;
     public float bulletSpeed = 10f;
 
-    public float fireRate = 0.5f;
-    private float nextFireTime = 0f;
-
     public Transform target; // Target that the enemy will shoot at
+    public RotateEnemy rotation;
     public float shootingRange = 5f; // The maximum distance to shoot
 
-    void Update()
+    private void Start()
     {
-        Shoot();
+        if (firePoint == null || BulletPrefab == null || rotation == null)
+        {
+            Debug.LogError("Missing required references in EnemyShoot script.");
+            return;
+        }
+
+        StartCoroutine(Shoot());
     }
 
-    public void Shoot()
+    public IEnumerator Shoot()
     {
-        // Check if the target is within shooting range
-        if (target != null && Vector2.Distance(transform.position, target.position) <= shootingRange)
+        while (true)
         {
-            // Only allow shooting if the cooldown has passed
-            if (Time.time >= nextFireTime)
+            if (target != null && Vector2.Distance(transform.position, target.position) <= shootingRange)
             {
-                GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
-                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    rb.velocity = firePoint.up * bulletSpeed; // Shoot the bullet in the firePoint's up direction
-                }
+                yield return new WaitForSeconds(2f);
 
-                nextFireTime = Time.time + fireRate;
+                if (rotation != null)
+                {
+                    rotation.canRotate = false;
+                    rotation.RotateDifferent();
+
+                    yield return new WaitForSeconds(.5f);
+
+                    GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
+                    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.velocity = firePoint.up * bulletSpeed; // Shoot the bullet in the firePoint's up direction
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Bullet prefab does not have a Rigidbody2D component!");
+                    }
+
+                    yield return new WaitForSeconds(.5f);
+
+                    rotation.canRotate = true;
+                }
+                else
+                {
+                    Debug.LogWarning("Rotation script is missing.");
+                }
             }
+            yield return null;
         }
     }
 }

@@ -10,25 +10,40 @@ public class RotateEnemy : MonoBehaviour
     public Enemy_Nav nav;
     public LayerMask playerLayer;
     public LayerMask obstacleLayer;
+    public bool canRotate = true;
 
     void Update()
     {
-        Vector3 toPlayer = nav.playerRef.transform.position - transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, Mathf.Infinity, playerLayer | obstacleLayer);
+        if(canRotate)
+        {
+            Vector3 toPlayer = nav.playerRef.transform.position - transform.position;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, Mathf.Infinity, playerLayer | obstacleLayer);
 
-        if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & playerLayer) != 0)
-        {
-            RotateTowards(toPlayer);
-        }
-        else
-        {
-            if (agent.hasPath)
+            if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & playerLayer) != 0)
             {
-                Vector3 direction = agent.steeringTarget - transform.position;
-                RotateTowards(direction);
+                RotateTowards(toPlayer);
+            }
+            else
+            {
+                if (agent.hasPath)
+                {
+                    Vector3 direction = agent.steeringTarget - transform.position;
+                    RotateTowards(direction);
+                }
             }
         }
     }
+
+    public void RotateDifferent()
+    {
+        // Get the current rotation, and adjust it by 180 degrees on the Z-axis.
+        float currentZRotation = transform.eulerAngles.z;
+        float newZRotation = currentZRotation + 180f;
+
+        // Apply the new rotation
+        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, newZRotation);
+    }
+
 
     void RotateTowards(Vector3 direction)
     {
