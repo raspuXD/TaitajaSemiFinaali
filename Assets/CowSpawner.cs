@@ -4,33 +4,43 @@ using UnityEngine;
 
 public class CowSpawner : MonoBehaviour
 {
-    public GameObject objectToSpawn;
+    public GameObject cowMelee, cowRanged;
     public Transform[] spawnPoints;
     public float minTimeBetweenSpawns = 1f;
     public float maxTimeBetweenSpawns = 3f;
 
-
     public Transform player;
+
+    private bool spawnMeleeNext = true;
 
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(minTimeBetweenSpawns);
-        SpawnObject();
+        StartCoroutine(SpawnRoutine());
     }
 
-    private void SpawnObject()
+    private IEnumerator SpawnRoutine()
     {
-        // Randomly select a spawn point from the array
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform spawnPoint = spawnPoints[randomIndex];
+        while (true) // Keep spawning indefinitely
+        {
+            // Randomly select a spawn point from the array
+            int randomIndex = Random.Range(0, spawnPoints.Length);
+            Transform spawnPoint = spawnPoints[randomIndex];
 
-        // Spawn the object at the chosen point
-        GameObject cowsas = Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
-        Enemy_Nav cowInsta = cowsas.GetComponent<Enemy_Nav>();
-        cowInsta.playerRef = player;
+            // Determine which cow to spawn based on the flag
+            GameObject objectToSpawn = spawnMeleeNext ? cowMelee : cowRanged;
 
-        // Schedule the next spawn
-        float spawnDelay = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
-        Invoke("SpawnObject", spawnDelay);
+            // Spawn the object at the chosen point
+            GameObject spawnedCow = Instantiate(objectToSpawn, spawnPoint.position, Quaternion.identity);
+            Enemy_Nav cowInsta = spawnedCow.GetComponent<Enemy_Nav>();
+            cowInsta.playerRef = player;
+
+            // Toggle the flag to alternate between melee and ranged
+            spawnMeleeNext = !spawnMeleeNext;
+
+            // Wait for the next spawn
+            float spawnDelay = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
+            yield return new WaitForSeconds(spawnDelay);
+        }
     }
 }

@@ -35,7 +35,7 @@ public class ShowBubble : MonoBehaviour
                 }
                 else
                 {
-                    if(inve.Money >= 200)
+                    if(inve.Money >= 100)
                     {
                         Debug.Log("Stage 2");
                     }

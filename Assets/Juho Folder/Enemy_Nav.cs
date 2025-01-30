@@ -9,6 +9,7 @@ public class Enemy_Nav : MonoBehaviour
     public float rotationSpeed = 100f;
     public float stopDistance = 1f;
     NavMeshAgent agent;
+    public EnemyShoot shoot;
 
     private void Start()
     {
@@ -16,6 +17,10 @@ public class Enemy_Nav : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         agent.speed = movementSpeed;
+        if(shoot != null)
+        {
+            shoot.target = playerRef;
+        }
     }
 
     private void Update()

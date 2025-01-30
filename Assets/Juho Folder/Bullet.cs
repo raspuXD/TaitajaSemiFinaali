@@ -5,20 +5,36 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public int Damage;
+    public bool isenemyBullet;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Check if the object collided with has the "EnemyCow" tag
-        if (collider.CompareTag("EnemyCow"))
+        if (isenemyBullet)
         {
-            Enemy_Health enemyHealth = collider.GetComponent<Enemy_Health>();
-            if (enemyHealth != null)
+            if(collider.CompareTag("Player"))
             {
-                // Deal damage to the enemy
-                enemyHealth.TakeDamage(Damage);
-            }
+                PlayerHealth health = collider.GetComponent<PlayerHealth>();
+                if(health != null)
+                {
+                    health.TakeDamage(Damage);
+                }
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (collider.CompareTag("EnemyCow"))
+            {
+                Enemy_Health enemyHealth = collider.GetComponent<Enemy_Health>();
+                if (enemyHealth != null)
+                {
+                    // Deal damage to the enemy
+                    enemyHealth.TakeDamage(Damage);
+                }
+
+                Destroy(gameObject);
+            }
         }
     }
 }
