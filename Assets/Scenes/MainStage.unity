@@ -8376,7 +8376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Milk: 0
   Bullets: 4
-  Money: 1100
+  Money: 50
   milkText: {fileID: 1533717774}
   bulletsText: {fileID: 569277269}
   moneyText: {fileID: 1456950213}
@@ -13818,6 +13818,7 @@ Transform:
   m_Children:
   - {fileID: 1530853292}
   - {fileID: 1130590155}
+  - {fileID: 1596796559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &731485327
@@ -15494,7 +15495,7 @@ MonoBehaviour:
   hitEffectDuration: 0.5
   maxHitEffect: 1
   worShipper: 0
-  fillImage: {fileID: 0}
+  fillImage: {fileID: 1714180192}
   worshipHolder: {fileID: 0}
   bossKing: {fileID: 0}
   otherWorshop: {fileID: 0}
@@ -19987,6 +19988,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
+      propertyPath: sfxSounds.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4c3550040a925e2488fd68463abff126, type: 3}
+    - target: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
+      propertyPath: sfxSounds.Array.data[12].name
+      value: DRANK
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
+      propertyPath: sfxSounds.Array.data[12].pitchRange.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
+      propertyPath: sfxSounds.Array.data[12].pitchRange.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4603177376387414445, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
       propertyPath: m_Name
       value: Audio Manager
@@ -26201,7 +26222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1423904422}
-  - component: {fileID: 1423904421}
   m_Layer: 0
   m_Name: TutorialPopUpWithMultiple
   m_TagString: Untagged
@@ -26209,41 +26229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1423904421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423904420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df0df0d7521a0264eb89d73497d2ef8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theTutorialButton: {fileID: 1996545994}
-  thePopUp: {fileID: 303699964}
-  canCountinueNow: {fileID: 765578175}
-  theInfoText: {fileID: 1839785843}
-  howToGetAwayText: {fileID: 1825650132}
-  theDarkBackground: {fileID: 1996545995}
-  closeKey: 101
-  willSeeOnlyOnce: 1
-  thePlayerPrefName: TutorialPopUp0
-  howFastScales: 0.33
-  howLongToCanClose: 1
-  showInStart: 1
-  wantToWriteInStart: 'NO NONO '
-  howLongNeedToWaitIfFade: 0.75
-  fromATrigger: 0
-  wantToWriteInTrigger: 
-  usesMultipleDias: 1
-  theDifferentDias:
-  - You move with WASD and look around with mouse
-  - Left click shoots if you have enough bullets!
-  - You can sprint with left shift
-  - You can drink milk with R to get some health back!
-  - "You need to collect 100\u20AC to escape this farm!"
 --- !u!4 &1423904422
 Transform:
   m_ObjectHideFlags: 0
@@ -26253,7 +26238,7 @@ Transform:
   m_GameObject: {fileID: 1423904420}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 310.81433, y: 381.52023, z: 3.9924119}
+  m_LocalPosition: {x: 50.36, y: 13.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31279,7 +31264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1596796557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31364,11 +31349,11 @@ Transform:
   m_GameObject: {fileID: 1596796556}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 112.87, y: 39.31, z: 0}
-  m_LocalScale: {x: 0.90277, y: 0.90277, z: 0.90277}
+  m_LocalPosition: {x: 6.6165915, y: -35.184677, z: 0}
+  m_LocalScale: {x: 1.7568405, y: 1.7568405, z: 1.7568405}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 731485326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1599906617
 GameObject:
@@ -40000,4 +39985,3 @@ SceneRoots:
   - {fileID: 863827200}
   - {fileID: 351056144}
   - {fileID: 1085159914}
-  - {fileID: 1596796559}
