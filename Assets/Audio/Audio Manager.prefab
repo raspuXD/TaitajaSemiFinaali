@@ -202,6 +202,38 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 979b611d379249545ae679715dab4d68, type: 3}
     useRandomPitch: 0
     pitchRange: {x: 1, y: 1}
+  - name: BulletsGet
+    clip: {fileID: 8300000, guid: 2eb1436da386dcf408c33bc71d96479a, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: COWFUCKINGDIES
+    clip: {fileID: 8300000, guid: 0c5a3736142953a4f90770741029e6fd, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: MilkGet
+    clip: {fileID: 8300000, guid: fbd84e696d82e9d41b93bc994a753543, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: MilkSpaw
+    clip: {fileID: 8300000, guid: 2a33f9c6c93fefa48a9681118128b3e5, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: MomeGe
+    clip: {fileID: 8300000, guid: 2dc586295331e924b8c0ee5f77f41c47, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: ce87baeb8d5a4ae49a75d2dfa0c0eb1c, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: SNOOK
+    clip: {fileID: 8300000, guid: 43b0c321e47752b4b97d00973dff9c8c, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: SHAAT
+    clip: {fileID: 8300000, guid: 290d38d3d3ab4ad469a13390f9a48c31, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
   musicSource: {fileID: 4180836528979327869}
   sfxSource: {fileID: 1455452543863251528}
   whatMusicToPlayInStart: Theme

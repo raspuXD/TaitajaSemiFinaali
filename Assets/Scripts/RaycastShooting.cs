@@ -40,6 +40,7 @@ public class RaycastShooting : MonoBehaviour
                 if (inventory.Bullets > 0)  // Check if there are bullets available
                 {
                     // Instantiate a bullet and shoot it
+                    AudioManager.Instance.PlaySFX("Shoot");
                     GameObject bullet = Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
                     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                     if (rb != null)

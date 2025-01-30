@@ -10,6 +10,7 @@ public class Snake : MonoBehaviour
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
+            AudioManager.Instance.PlaySFX("SNOOK");
             playerHealth.TakeDamage(damageAmount);
         }
     }

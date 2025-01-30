@@ -12,6 +12,7 @@ public class CowShit : MonoBehaviour
         TopViewPlayer player = other.GetComponent<TopViewPlayer>();
         if (player != null && !isPlayerInTrap) 
         {
+            AudioManager.Instance.PlaySFX("SHAAT");
             StartCoroutine(ApplySlowEffect(player));
         }
     }
