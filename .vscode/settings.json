@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TaitajaSemiFinal2D.sln"
+    "dotnet.defaultSolution": "TaitajaSemiFinaali.sln"
 }
