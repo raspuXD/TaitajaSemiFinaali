@@ -13,6 +13,8 @@ public class CowSpawner : MonoBehaviour
 
     private bool spawnMeleeNext = true;
 
+    private List<GameObject> spawnedCows = new List<GameObject>(); // List to keep track of spawned cows
+
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(minTimeBetweenSpawns);
@@ -35,6 +37,9 @@ public class CowSpawner : MonoBehaviour
             Enemy_Nav cowInsta = spawnedCow.GetComponent<Enemy_Nav>();
             cowInsta.playerRef = player;
 
+            // Add the spawned cow to the list
+            spawnedCows.Add(spawnedCow);
+
             // Toggle the flag to alternate between melee and ranged
             spawnMeleeNext = !spawnMeleeNext;
 
@@ -42,5 +47,17 @@ public class CowSpawner : MonoBehaviour
             float spawnDelay = Random.Range(minTimeBetweenSpawns, maxTimeBetweenSpawns);
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    public void DestroyAllCows()
+    {
+        foreach (GameObject cow in spawnedCows)
+        {
+            if (cow != null)
+            {
+                Destroy(cow); // Destroy the cow
+            }
+        }
+        spawnedCows.Clear(); // Clear the list after destroying all cows
     }
 }

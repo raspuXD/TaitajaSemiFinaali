@@ -11,6 +11,11 @@ public class ShowBubble : MonoBehaviour
 
     public bool isKalle, isJuho;
 
+    [Header("Kai Teleport")]
+    public Transform whereTo;
+    public GameObject playerPref;
+    public CowSpawner spawner;
+
     private void Update()
     {
         if(canPressE)
@@ -37,11 +42,18 @@ public class ShowBubble : MonoBehaviour
                 {
                     if(inve.Money >= 100)
                     {
-                        Debug.Log("Stage 2");
+                        Teleport();
                     }
                 }
             }
         }
+    }
+
+    void Teleport()
+    {
+        playerPref.transform.position = whereTo.position;
+        spawner.DestroyAllCows();
+        Destroy(spawner);
     }
 
 

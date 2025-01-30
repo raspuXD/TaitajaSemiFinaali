@@ -572,19 +572,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: placeHolderForPause
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 625053919}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: UIButton
+          m_StringArgument: Stage1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &362462552
@@ -600,14 +588,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.52905416, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 398841748a3506f4694e1bc336aeeca1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a8407bd43263344cb3208eacfc8732a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -854,18 +842,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 625053919}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: UIButton
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &392773380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,14 +855,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.52905416, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 398841748a3506f4694e1bc336aeeca1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a8407bd43263344cb3208eacfc8732a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1292,17 +1268,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
---- !u!114 &625053919 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3710357546201478036, guid: 668013ef5ae4b2d4c911c79ef1ec7ca1, type: 3}
-  m_PrefabInstance: {fileID: 625053918}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4edbc099f7837034ab7933a72ea91eeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &712162121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,10 +1527,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "MAIN \nMENU"
+  m_text: MAIN MENU
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
+  m_sharedMaterial: {fileID: -8683313395804582528, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1589,8 +1554,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 74.6
-  m_fontSizeBase: 74.6
+  m_fontSize: 84.1
+  m_fontSizeBase: 84.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1765,18 +1730,6 @@ MonoBehaviour:
           m_StringArgument: mainmenu
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 625053919}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: PlaySFX
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: UIButton
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1160393335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,14 +1743,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.52905416, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 398841748a3506f4694e1bc336aeeca1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a8407bd43263344cb3208eacfc8732a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1895,7 +1848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -151.67065}
+  m_AnchoredPosition: {x: 0, y: -167}
   m_SizeDelta: {x: 1789.2554, y: 219.6182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622758948
@@ -1918,10 +1871,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "YOU WON WITH SCORE OF\n1000\u20AC or points!"
+  m_text: 'YOU GOT AWAY FROM THE COWS!
+
+    GOOD JOB!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6b66b7a92f464534ebcb82e8a0d40865, type: 2}
+  m_sharedMaterial: {fileID: -8683313395804582528, guid: 6b66b7a92f464534ebcb82e8a0d40865, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1945,8 +1900,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 93.39
-  m_fontSizeBase: 93.39
+  m_fontSize: 99.33
+  m_fontSizeBase: 99.33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2100,8 +2055,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: AGAIN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
+  m_sharedMaterial: {fileID: -8683313395804582528, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2428,8 +2383,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUIT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
+  m_sharedMaterial: {fileID: -8683313395804582528, guid: 0b65b0f07140389418b16750ffa35cdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2770,14 +2725,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 0.73274523, b: 0.5330188, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6eee9eb063d148d4892d4e1727fd2011, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
