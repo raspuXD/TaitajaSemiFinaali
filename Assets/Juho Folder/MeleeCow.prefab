@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 7181080848620176551}
   - component: {fileID: 4633393342793593151}
   - component: {fileID: 5960234763971585475}
+  - component: {fileID: 5145859643795803394}
+  - component: {fileID: 3991763801277308329}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -140,6 +142,55 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!58 &5145859643795803394
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282013034674542652}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.6223896}
+  serializedVersion: 2
+  m_Radius: 0.9376104
+--- !u!114 &3991763801277308329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282013034674542652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93d5203fd5b8844b9efef0742b672a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 5
+  damageInterval: 0.5
 --- !u!1 &5628109475861927558
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  theCoinPrefab: {fileID: 3498243222248332722, guid: 01589bd228cb79f40b1860b9d0c163d6, type: 3}
+  theCoinPrefab: {fileID: 426565550926093790, guid: b5665c054bebf71448efd885120d4cef, type: 3}
   spawnPoint1: {fileID: 3018578115293682923}
   spawnPoint2: {fileID: 4327235138140966976}
   spawnPoint3: {fileID: 668636716807127541}

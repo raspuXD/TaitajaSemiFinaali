@@ -43,13 +43,13 @@ public class Compass : MonoBehaviour
             theArrowThatNeedsToBeRotated.rotation = Quaternion.Euler(0, 0, angle);
 
             // If inside the circle, don't show the distance text
-            if (shortestDistance <= 10)
+            if (shortestDistance <= 3)
             {
                 theDistanceToIt.text = "";  // No text if inside the circle
             }
             else
             {
-                theDistanceToIt.text = $"{Mathf.RoundToInt(shortestDistance)} m";
+                theDistanceToIt.text = $"Kai is at {Mathf.RoundToInt(shortestDistance)} m";
             }
         }
     }

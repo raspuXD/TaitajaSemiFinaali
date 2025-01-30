@@ -6,62 +6,26 @@ using TMPro;  // To work with TextMeshPro components
 
 public class Inventory : MonoBehaviour
 {
-    // Inventory values
-    public float Insanity = 0f;  // Starts at 0
     public int Milk = 5;  // Initial milk amount
     public int Bullets = 10;  // Initial bullet count
+    public int Money = 0;
 
-    public Color darkRed;
-    // UI components
-    public Image insanityFillImage;  // Image component to represent insanity as a fill (instead of Slider)
-
-    // TextMeshPro components to display Milk and Bullets
     public TMP_Text milkText;  // TextMeshPro reference for milk amount
-    public TMP_Text bulletsText;  // TextMeshPro reference for bullet count
+    public TMP_Text bulletsText;
+    public TMP_Text moneyText;// TextMeshPro reference for bullet count
 
-    // Insanity dynamics
-    public float InsanityIncreaseRate = 1f;  // Rate of insanity increase per second
-    public float InsanityDecreaseRate = 0.5f;  // Rate of insanity decrease
-    SceneHandler sceneHandler;
+    public InventoryShow show;
 
-
-    private void Start()
-    {
-        sceneHandler = FindObjectOfType<SceneHandler>();
-    }
 
     // Called once per frame
     void Update()
     {
-        // Example condition to increase insanity (could be based on events in the game)
-        if (Insanity < 100f)  // Make sure insanity does not exceed 100
-        {
-            Insanity += InsanityIncreaseRate * Time.deltaTime;
-        }
-        else
-        {
-            sceneHandler.LoadSceneNamed("gameOver");
-        }
-
-        // Update the insanity fill image's fill amount based on the current Insanity value
-        if (insanityFillImage != null)
-        {
-            insanityFillImage.fillAmount = Insanity / 100f;  // Normalize Insanity to a 0-1 range
-        }
-
-        // Optional: Customize the fill color of the insanity bar (e.g., make it red as insanity increases)
-        if (insanityFillImage != null)
-        {
-            float insanityPercentage = Insanity / 100f;  // Normalize Insanity to a 0-1 range
-            insanityFillImage.color = Color.Lerp(Color.red, darkRed, insanityPercentage);  // Lerp color from green to red
-        }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (Milk > 0)
             {
                 DecreaseMilk(1);  // Drink one milk
-                DecreaseInsanity(10f);  // Reduce insanity by 10
             }
             else
             {
@@ -84,12 +48,29 @@ public class Inventory : MonoBehaviour
         {
             bulletsText.text = Bullets.ToString();  // Update the bullets amount text
         }
+        moneyText.text = Money.ToString() + "€";
     }
 
-    // Method to increase milk
+    public void IncreaseMoney(int amount)
+    {
+        Money += amount;
+        show.ActivateThis();
+        show.HideInventory();
+        Debug.Log("Milk increased! Current milk: " + Milk);
+    }
+
+
+    public void DecreaseMoney(int amount)
+    {
+        Money -= amount;
+        show.ActivateThis();
+        show.HideInventory();
+    }
     public void IncreaseMilk(int amount)
     {
         Milk += amount;
+        show.ActivateThis();
+        show.HideInventory();
         Debug.Log("Milk increased! Current milk: " + Milk);
     }
 
@@ -99,6 +80,8 @@ public class Inventory : MonoBehaviour
         if (Milk >= amount)
         {
             Milk -= amount;
+            show.ActivateThis();
+            show.HideInventory();
             Debug.Log("Milk decreased! Current milk: " + Milk);
         }
         else
@@ -111,6 +94,8 @@ public class Inventory : MonoBehaviour
     public void IncreaseBullets(int amount)
     {
         Bullets += amount;
+        show.ActivateThis();
+        show.HideInventory();
         Debug.Log("Bullets increased! Current bullets: " + Bullets);
     }
 
@@ -120,31 +105,13 @@ public class Inventory : MonoBehaviour
         if (Bullets >= amount)
         {
             Bullets -= amount;
+            show.ActivateThis();
+            show.HideInventory();
             Debug.Log("Bullets decreased! Current bullets: " + Bullets);
         }
         else
         {
             Debug.Log("Not enough bullets!");
         }
-    }
-
-    // Method to handle insanity increase (for when specific triggers happen in the game)
-    public void IncreaseInsanity(float amount)
-    {
-        Insanity = Mathf.Min(Insanity + amount, 100f);  // Clamp the insanity value to max of 100
-        Debug.Log("Insanity increased! Current insanity: " + Insanity);
-    }
-
-    // Method to handle insanity decrease (for when calming actions or successful defense happens)
-    public void DecreaseInsanity(float amount)
-    {
-        Insanity = Mathf.Max(Insanity - amount, 0f);  // Ensure insanity doesn't go below 0
-        Debug.Log("Insanity decreased! Current insanity: " + Insanity);
-    }
-
-    // You could also add a method to display values for debugging purposes
-    public void DisplayInventoryStatus()
-    {
-        Debug.Log($"Insanity: {Insanity}, Milk: {Milk}, Bullets: {Bullets}");
     }
 }
