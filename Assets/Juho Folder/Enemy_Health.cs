@@ -100,10 +100,13 @@ public class Enemy_Health : MonoBehaviour
             }
             else if (randomChance <= 0.75f) // 25% chance
             {
+                Instantiate(theCoinPrefab, spawnPoint1.position, Quaternion.identity);
                 Instantiate(theCoinPrefab, spawnPoint2.position, Quaternion.identity);
             }
             else if (randomChance <= 0.85f) // 10% chance
             {
+                Instantiate(theCoinPrefab, spawnPoint1.position, Quaternion.identity);
+                Instantiate(theCoinPrefab, spawnPoint2.position, Quaternion.identity);
                 Instantiate(theCoinPrefab, spawnPoint3.position, Quaternion.identity);
             }
         }
