@@ -65,6 +65,7 @@ public class ShowBubble : MonoBehaviour
         ha3.SetActive(true);
         lowTaperFade.SetActive(true);
         snake.SetActive(true);
+        AudioManager.Instance.ChangeMusic("Boss", 1.5f, 1f);
         Destroy(spawner);
     }
 

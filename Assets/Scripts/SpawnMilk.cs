@@ -26,6 +26,7 @@ public class SpawnMilk : MonoBehaviour
 
     void SpawnMilkVoid()
     {
+        AudioManager.Instance.PlaySFX("MilkSpaw");
         lastMilk = Instantiate(milkPrefab, spawnPoint.position, Quaternion.identity);
     }
 }

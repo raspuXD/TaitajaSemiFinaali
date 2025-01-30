@@ -110,7 +110,9 @@ public class Enemy_Health : MonoBehaviour
 
         if(isKing)
         {
+            AudioManager.Instance.ChangeMusic("Theme", 1.5f, 1f);
             SceneManager.LoadScene("win");
+
         }
 
         if (worShipper)
@@ -124,6 +126,7 @@ public class Enemy_Health : MonoBehaviour
         }
         // No coin spawn for remaining 15%
 
+        AudioManager.Instance.PlaySFX("COWFUCKINGDIES");
         Destroy(gameObject);
     }
 

@@ -62,6 +62,7 @@ public class Inventory : MonoBehaviour
     public void IncreaseMoney(int amount)
     {
         Money += amount;
+        AudioManager.Instance.PlaySFX("MomeGe");
         show.ActivateThis();
         show.HideInventory();
         Debug.Log("Money increased! Current money: " + Money);
@@ -77,6 +78,7 @@ public class Inventory : MonoBehaviour
     public void IncreaseMilk(int amount)
     {
         Milk += amount;
+        AudioManager.Instance.PlaySFX("MilkGet");
         show.ActivateThis();
         show.HideInventory();
         Debug.Log("Milk increased! Current milk: " + Milk);
@@ -102,6 +104,7 @@ public class Inventory : MonoBehaviour
     public void IncreaseBullets(int amount)
     {
         Bullets += amount;
+        AudioManager.Instance.PlaySFX("BulletsGet");
         show.ActivateThis();
         show.HideInventory();
         Debug.Log("Bullets increased! Current bullets: " + Bullets);

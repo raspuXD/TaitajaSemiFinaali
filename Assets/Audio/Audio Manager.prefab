@@ -178,7 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Theme
-    clip: {fileID: 8300000, guid: 167a0af981f6d324497a9cf72d7beadd, type: 3}
+    clip: {fileID: 8300000, guid: 9261b9e1724340d439019beffab29708, type: 3}
+    useRandomPitch: 0
+    pitchRange: {x: 1, y: 1}
+  - name: Boss
+    clip: {fileID: 8300000, guid: c5ecfb18cae4a0b40985d5bf6e4065c7, type: 3}
     useRandomPitch: 0
     pitchRange: {x: 1, y: 1}
   sfxSounds:
@@ -200,6 +204,7 @@ MonoBehaviour:
     pitchRange: {x: 1, y: 1}
   musicSource: {fileID: 4180836528979327869}
   sfxSource: {fileID: 1455452543863251528}
+  whatMusicToPlayInStart: Theme
 --- !u!114 &5017221450653562304
 MonoBehaviour:
   m_ObjectHideFlags: 0

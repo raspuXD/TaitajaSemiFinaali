@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -33,6 +34,12 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         Debug.Log("Player Health: " + currentHealth);
         TakeHit();
+
+        if(currentHealth <= 0)
+        {
+            AudioManager.Instance.ChangeMusic("Theme", 1.5f, 1f);
+            SceneManager.LoadScene("gameOver");
+        }
     }
 
     public void RestoreHealth(int amount)
