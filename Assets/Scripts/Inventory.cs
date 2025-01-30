@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
             if (Milk > 0) // Check if the player has milk
             {
                 Milk--; // Decrease milk count by 1
-                playerHealth.RestoreHealth(20); // Restore health by 20 (this can be customized)
+                playerHealth.RestoreHealth(40); // Restore health by 20 (this can be customized)
                 AudioManager.Instance.PlaySFX("DRANK");
                 Debug.Log("Drank milk. Health restored!");
             }

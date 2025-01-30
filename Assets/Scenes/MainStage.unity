@@ -39889,6 +39889,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 503253314}
     - target: {fileID: 7050484575523655033, guid: 934f1b3b10d2f4a4eac838531339cabc, type: 3}
+      propertyPath: maxHealth
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 7050484575523655033, guid: 934f1b3b10d2f4a4eac838531339cabc, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 769041690}

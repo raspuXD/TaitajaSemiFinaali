@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -571.4737, y: 351.13}
-  m_SizeDelta: {x: 740.9815, y: 377.7316}
+  m_AnchoredPosition: {x: -571.4737, y: 127.07422}
+  m_SizeDelta: {x: 740.9815, y: 825.843}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21012025
 MonoBehaviour:
@@ -188,7 +188,13 @@ MonoBehaviour:
     R
     TO DRINK MILK THAT RESTORES HEALTH
 
-    LEFT SHIFT TO SPRINT'
+    LEFT SHIFT TO SPRINT
+
+
+    THIS PROTOTYPE
+    IS MADE EASIER
+
+    FOR PLAYTESTING!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b66b7a92f464534ebcb82e8a0d40865, type: 2}
   m_sharedMaterial: {fileID: -8683313395804582528, guid: 6b66b7a92f464534ebcb82e8a0d40865, type: 2}
