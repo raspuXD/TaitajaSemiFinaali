@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/win.unity
     guid: 51a17f0f39af6da4b952b822ca8218e1
   - enabled: 1
-    path: Assets/Juho Folder/MainStage.unity
+    path: Assets/Scenes/MainStage.unity
     guid: bf472bb5a57b07744adb341580f68bd4
   m_configObjects: {}
