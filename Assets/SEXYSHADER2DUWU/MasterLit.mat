@@ -43,23 +43,23 @@ Material:
     m_Floats:
     - _Dissolve: 0
     - _DissolveAmount: 0
-    - _HitEffect: 0
-    - _HitEffectBlend: 0.949
-    - _HitEffectGlow: 7.39
+    - _HitEffect: 1
+    - _HitEffectBlend: 0
+    - _HitEffectGlow: 5.1
     - _HueShift: 0
     - _HueShiftAmount: 146.26
     - _HueShiftAnimate: 0
     - _HueShiftAnimationSpeed: 17.9
     - _Outline: 0
     - _OutlineThickness: 0.03
-    - _Pixel_Resolution: 62
-    - _Pixelation: 1
+    - _Pixel_Resolution: 120
+    - _Pixelation: 0
     - _Saturation: 0
     - _SaturationAmount: 1
-    - _Use8Directions: 1
+    - _Use8Directions: 0
     m_Colors:
-    - _HitEffectColor: {r: 0.990566, g: 0, b: 0.071447365, a: 0}
-    - _OutlineColor: {r: 1, g: 0, b: 0, a: 0}
+    - _HitEffectColor: {r: 1, g: 0.021978023, b: 0, a: 0}
+    - _OutlineColor: {r: 0.35339183, g: 0.8773585, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4659019801097747099
 MonoBehaviour:

@@ -91,7 +91,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9eae7fa52771f6447bddbe5491f05cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -322,6 +322,9 @@ MonoBehaviour:
   spawnPoint1: {fileID: 3018578115293682923}
   spawnPoint2: {fileID: 4327235138140966976}
   spawnPoint3: {fileID: 668636716807127541}
+  spriteRenderer: {fileID: 4633393342793593151}
+  hitEffectDuration: 0.5
+  maxHitEffect: 1
 --- !u!50 &4221106610038115558
 Rigidbody2D:
   serializedVersion: 4

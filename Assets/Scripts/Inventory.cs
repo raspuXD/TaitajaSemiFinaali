@@ -12,27 +12,31 @@ public class Inventory : MonoBehaviour
 
     public TMP_Text milkText;  // TextMeshPro reference for milk amount
     public TMP_Text bulletsText;
-    public TMP_Text moneyText;// TextMeshPro reference for bullet count
+    public TMP_Text moneyText; // TextMeshPro reference for bullet count
 
     public InventoryShow show;
 
+    public PlayerHealth playerHealth; // Reference to PlayerHealth script
 
     // Called once per frame
     void Update()
     {
-
+        // Check if the player presses the 'R' key to drink milk
         if (Input.GetKeyDown(KeyCode.R))
         {
-            if (Milk > 0)
+            if (Milk > 0) // Check if the player has milk
             {
-                DecreaseMilk(1);  // Drink one milk
+                Milk--; // Decrease milk count by 1
+                playerHealth.RestoreHealth(20); // Restore health by 20 (this can be customized)
+                Debug.Log("Drank milk. Health restored!");
             }
             else
             {
                 Debug.Log("No milk to drink!");
             }
         }
-        // Update the Milk and Bullets text displays
+
+        // Update the inventory display (milk, bullets, money)
         UpdateInventoryText();
     }
 
@@ -48,7 +52,11 @@ public class Inventory : MonoBehaviour
         {
             bulletsText.text = Bullets.ToString();  // Update the bullets amount text
         }
-        moneyText.text = Money.ToString() + "€";
+
+        if (moneyText != null)
+        {
+            moneyText.text = Money.ToString() + "â‚¬";  // Update the money text
+        }
     }
 
     public void IncreaseMoney(int amount)
@@ -56,9 +64,8 @@ public class Inventory : MonoBehaviour
         Money += amount;
         show.ActivateThis();
         show.HideInventory();
-        Debug.Log("Milk increased! Current milk: " + Milk);
+        Debug.Log("Money increased! Current money: " + Money);
     }
-
 
     public void DecreaseMoney(int amount)
     {
@@ -66,6 +73,7 @@ public class Inventory : MonoBehaviour
         show.ActivateThis();
         show.HideInventory();
     }
+
     public void IncreaseMilk(int amount)
     {
         Milk += amount;
