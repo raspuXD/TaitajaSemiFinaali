@@ -16,7 +16,7 @@ public class ShowBubble : MonoBehaviour
     public GameObject playerPref;
     public CowSpawner spawner;
     public BulletSpawner bulletSpawner;
-    public GameObject healtBar1, healtBar2, snake, lowTaperFade, hah, ha3;
+    public GameObject healtBar1, healtBar2, snake, lowTaperFade, hah, ha3, porhelo;
 
 
 
@@ -65,6 +65,7 @@ public class ShowBubble : MonoBehaviour
         ha3.SetActive(true);
         lowTaperFade.SetActive(true);
         snake.SetActive(true);
+        porhelo.SetActive(false);
         AudioManager.Instance.ChangeMusic("Boss", 1.5f, 1f);
         Destroy(spawner);
     }
