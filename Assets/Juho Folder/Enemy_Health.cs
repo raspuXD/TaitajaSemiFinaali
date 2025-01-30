@@ -1,9 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Enemy_Health : MonoBehaviour
 {
     public int health = 100;  // Initial health of the enemy
+    int maxHealth;
     public GameObject theCoinPrefab;
     public Transform spawnPoint1, spawnPoint2, spawnPoint3;
 
@@ -14,6 +17,14 @@ public class Enemy_Health : MonoBehaviour
     private Material material;
     private Coroutine hitEffectCoroutine;
 
+    public bool worShipper = false;
+    public Image fillImage; // Health bar UI Image
+    public GameObject worshipHolder;
+    public GameObject bossKing, otherWorshop;
+    public GameObject bossHealtHat;
+
+
+    public bool isKing = false;
     private void Start()
     {
         if (spriteRenderer != null)
@@ -21,6 +32,13 @@ public class Enemy_Health : MonoBehaviour
             // Get a material instance to avoid modifying the shared material
             material = spriteRenderer.material;
         }
+        maxHealth = health;
+        // Initialize the health bar if the fillImage is assigned
+        if (fillImage != null)
+        {
+            UpdateHealthBar();
+        }
+
     }
 
     public void TakeDamage(int Damage)
@@ -29,6 +47,12 @@ public class Enemy_Health : MonoBehaviour
 
         // Apply hit effect when taking damage
         TakeHit();
+
+        // Update health bar if it's assigned
+        if (fillImage != null)
+        {
+            UpdateHealthBar();
+        }
 
         if (health <= 0)
         {
@@ -66,22 +90,48 @@ public class Enemy_Health : MonoBehaviour
 
     private void Die()
     {
-        float randomChance = Random.Range(0f, 1f); // Generate a random number between 0 and 1
+        if(theCoinPrefab != null)
+        {
+            float randomChance = Random.Range(0f, 1f); // Generate a random number between 0 and 1
 
-        if (randomChance <= 0.5f) // 50% chance
-        {
-            Instantiate(theCoinPrefab, spawnPoint1.position, Quaternion.identity);
+            if (randomChance <= 0.5f) // 50% chance
+            {
+                Instantiate(theCoinPrefab, spawnPoint1.position, Quaternion.identity);
+            }
+            else if (randomChance <= 0.75f) // 25% chance
+            {
+                Instantiate(theCoinPrefab, spawnPoint2.position, Quaternion.identity);
+            }
+            else if (randomChance <= 0.85f) // 10% chance
+            {
+                Instantiate(theCoinPrefab, spawnPoint3.position, Quaternion.identity);
+            }
         }
-        else if (randomChance <= 0.75f) // 25% chance
+
+        if(isKing)
         {
-            Instantiate(theCoinPrefab, spawnPoint2.position, Quaternion.identity);
+            SceneManager.LoadScene("win");
         }
-        else if (randomChance <= 0.85f) // 10% chance
+
+        if (worShipper)
         {
-            Instantiate(theCoinPrefab, spawnPoint3.position, Quaternion.identity);
+            worshipHolder.SetActive(false);
+            if(otherWorshop == null)
+                {
+                bossKing.SetActive(true);
+                bossHealtHat.SetActive(true);
+            }
         }
         // No coin spawn for remaining 15%
 
         Destroy(gameObject);
+    }
+
+    private void UpdateHealthBar()
+    {
+        float healthPercent = Mathf.Clamp01((float)health / maxHealth);
+
+        // Update the fill amount of the health bar
+        fillImage.fillAmount = healthPercent;
     }
 }
