@@ -15,6 +15,10 @@ public class ShowBubble : MonoBehaviour
     public Transform whereTo;
     public GameObject playerPref;
     public CowSpawner spawner;
+    public BulletSpawner bulletSpawner;
+    public GameObject healtBar1, healtBar2, snake, lowTaperFade, hah, ha3;
+
+
 
     private void Update()
     {
@@ -54,6 +58,13 @@ public class ShowBubble : MonoBehaviour
     {
         playerPref.transform.position = whereTo.position;
         spawner.DestroyAllCows();
+        bulletSpawner.enabled = true;
+        healtBar1.SetActive(true);
+                    healtBar2.SetActive(true);
+        hah.SetActive(true);
+        ha3.SetActive(true);
+        lowTaperFade.SetActive(true);
+        snake.SetActive(true);
         Destroy(spawner);
     }
 
