@@ -11753,6 +11753,13 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   hitEffectDuration: 0.5
   maxHitEffect: 1
+  worShipper: 0
+  fillImage: {fileID: 0}
+  worshipHolder: {fileID: 0}
+  bossKing: {fileID: 0}
+  otherWorshop: {fileID: 0}
+  bossHealtHat: {fileID: 0}
+  isKing: 0
 --- !u!61 &824768518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13305,6 +13312,13 @@ MonoBehaviour:
   whereTo: {fileID: 335653908}
   playerPref: {fileID: 7836744708461837322}
   spawner: {fileID: 935494290}
+  bulletSpawner: {fileID: 0}
+  healtBar1: {fileID: 0}
+  healtBar2: {fileID: 0}
+  snake: {fileID: 0}
+  lowTaperFade: {fileID: 0}
+  hah: {fileID: 0}
+  ha3: {fileID: 0}
 --- !u!58 &937501407
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14509,6 +14523,13 @@ MonoBehaviour:
   whereTo: {fileID: 0}
   playerPref: {fileID: 0}
   spawner: {fileID: 0}
+  bulletSpawner: {fileID: 0}
+  healtBar1: {fileID: 0}
+  healtBar2: {fileID: 0}
+  snake: {fileID: 0}
+  lowTaperFade: {fileID: 0}
+  hah: {fileID: 0}
+  ha3: {fileID: 0}
 --- !u!1 &1032536352
 GameObject:
   m_ObjectHideFlags: 0
@@ -21951,7 +21972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1507626078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24359,6 +24380,13 @@ MonoBehaviour:
   whereTo: {fileID: 0}
   playerPref: {fileID: 0}
   spawner: {fileID: 0}
+  bulletSpawner: {fileID: 0}
+  healtBar1: {fileID: 0}
+  healtBar2: {fileID: 0}
+  snake: {fileID: 0}
+  lowTaperFade: {fileID: 0}
+  hah: {fileID: 0}
+  ha3: {fileID: 0}
 --- !u!58 &1589667611
 CircleCollider2D:
   m_ObjectHideFlags: 0
