@@ -20921,7 +20921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 7284811298799597586, guid: f9db841b0c0a8154c80520cc81089f06, type: 3}
   shootForce: 10
-  shootInterval: 2
+  shootInterval: 6
   spawnPoint: {fileID: 859541111}
   minAngle: 0
   maxAngle: 180
@@ -24687,7 +24687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 7284811298799597586, guid: f9db841b0c0a8154c80520cc81089f06, type: 3}
   shootForce: 10
-  shootInterval: 2
+  shootInterval: 6
   spawnPoint: {fileID: 98510275}
   minAngle: 0
   maxAngle: 180
